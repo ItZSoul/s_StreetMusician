@@ -46,7 +46,8 @@ local playing = false
             else if random_one == random_two then 
                 Wait(_sleep)
                 QBCore.Functions.Notify('Someone on the street gave you some money!', 'success', 10000)
-                TriggerServerEvent('s_programmerjob:givemoney')
+                local money = math.random(Config.min_money, Config.max_money)
+                TriggerServerEvent('s_programmerjob:givemoney', money)
 
             else
                 random_one = math.random(1,10)
